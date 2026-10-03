@@ -5,6 +5,11 @@ export const projects = [
     statusLabel: '已上線',
     title: 'Magebound 魔法牌戰',
     description: '使用 React 與 TypeScript 獨立開發回合制卡牌遊戲，涵蓋資料建模、戰鬥規則、互動介面與自動化測試。',
+    metrics: [
+      { value: '5 關＋Boss', label: '完整闖關流程' },
+      { value: '資料驅動', label: '卡牌與關卡系統' },
+      { value: '雙層測試', label: 'Vitest＋Playwright' },
+    ],
     technologies: ['React', 'TypeScript', 'SQLite', 'Vite', 'Immer', 'Vitest', 'Playwright'],
     challenge: '將卡牌資料、戰鬥規則與畫面呈現拆分為獨立層級；以資料驅動設計管理遊戲內容，並透過 Reducer 建立可預測的回合流程，讓新卡牌與關卡能以擴充資料及規則的方式加入。',
     highlights: [

@@ -84,26 +84,46 @@ function endSwipe(project, event) {
           </div>
         </div>
         <div class="project-body">
-          <div class="project-kicker"><span :class="project.status"></span>{{ project.statusLabel }}</div>
+          <div class="project-topline">
+            <span class="project-featured">FEATURED PROJECT</span>
+            <div class="project-kicker"><span :class="project.status"></span>{{ project.statusLabel }}</div>
+          </div>
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
+          <div class="project-metrics">
+            <div v-for="metric in project.metrics" :key="metric.value" class="project-metric">
+              <strong>{{ metric.value }}</strong>
+              <span>{{ metric.label }}</span>
+            </div>
+          </div>
           <div class="tech-list"><span v-for="tech in project.technologies" :key="tech">{{ tech }}</span></div>
-          <details>
-            <summary>查看開發重點</summary>
-            <p>{{ project.challenge }}</p>
-            <ul class="project-highlights">
-              <li v-for="item in project.highlights" :key="item">{{ item }}</li>
-            </ul>
-          </details>
           <div class="project-actions">
             <a v-if="project.url" class="project-link" :href="project.url" target="_blank" rel="noopener noreferrer">
-              線上展示 <span>↗</span>
+              立即遊玩 <span>↗</span>
             </a>
             <a v-if="project.sourceUrl" class="project-link" :href="project.sourceUrl" target="_blank" rel="noopener noreferrer">
               GitHub 原始碼 <span>↗</span>
             </a>
           </div>
         </div>
+        <details open class="project-details">
+          <summary>
+            <span class="details-label-open">收起資訊</span>
+            <span class="details-label-closed">查看開發重點</span>
+          </summary>
+          <div class="project-details-content">
+            <div>
+              <span class="detail-heading">設計挑戰與解法</span>
+              <p>{{ project.challenge }}</p>
+            </div>
+            <div>
+              <span class="detail-heading">核心開發成果</span>
+              <ul class="project-highlights">
+                <li v-for="item in project.highlights" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
+        </details>
       </article>
     </div>
   </section>
