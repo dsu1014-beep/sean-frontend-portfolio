@@ -1,5 +1,5 @@
 <script setup>
-const portraitUrl = `${import.meta.env.BASE_URL}images/大頭照.png`
+const portraitUrl = `${import.meta.env.BASE_URL}images/portrait.jpg`
 </script>
 
 <template>
